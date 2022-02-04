@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Show database content</title>
+</head>
+<body>
+    <table>
+         <thead>
+            <tr>
+               <th>id</th>
+               <th>name</th>
+               <th>power</th>
+               <th>is_villain</th>
+               <th>deceased_date</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for hero in heroes %}
+               <tr>
+                  <td>{{ hero.id }}</td>
+                  <td>{{ hero.name }}</td>
+                  <td>{{ hero.power }}</td>
+                  <td>{{ hero.is_villain }}</td>
+                   <td>{{ hero.deceased_date }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+    <table>
+         <thead>
+            <tr>
+               <th>id</th>
+               <th>hero_id</th>
+               <th>year</th>
+               <th>text</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for chronicle in chronicles %}
+               <tr>
+                  <td>{{ chronicle.id }}</td>
+                  <td>{{ chronicle.hero_id }}</td>
+                  <td>{{ chronicle.year }}</td>
+                  <td>{{ chronicle.text }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+</body>
+</html>
